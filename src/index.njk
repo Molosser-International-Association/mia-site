@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+title: Home
+description: A registry built for the molosser breeds. DNA-verified pedigrees, health-tested breeding stock and a public registry.
+---
+<section class="page-hero">
+  <div class="container">
+    <h1>A registry built for the molosser breeds</h1>
+    <p class="lead">DNA-verified pedigrees, health-tested breeding stock and a public registry for the Boerboel, Cane Corso and Presa Canario.</p>
+    <p><a class="button" href="/registration/">Start a registration</a></p>
+    <p class="eyebrow">Est. {{ site.established }}</p>
+  </div>
+</section>
+
+<div class="container page-body">
+  <h2>Breeds we register</h2>
+  <div class="card-grid">
+    {%- for b in breeds %}
+    <a class="breed-card" href="/breeds/{{ b.slug }}/">
+      <img src="{{ b.image }}" alt="{{ b.imageAlt }}" style="object-position: {{ b.imagePosition }}" loading="lazy">
+      <h3>{{ b.name }}</h3>
+      <p>{{ b.blurb }}</p>
+      <span>Breed standard &rarr;</span>
+    </a>
+    {%- endfor %}
+  </div>
+  <p><strong>More molosser breeds coming.</strong> MIA plans to open registration to more mastiff-type breeds.</p>
+
+  <p class="standard-note">Scaffold only: the rest of the home page is ported from the prototype in step 3.</p>
+</div>

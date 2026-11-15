@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "boerboel",
+    "name": "Boerboel",
+    "blurb": "A South African farm guardian: large, powerful, confident and devoted to its family.",
+    "image": "/assets/img/breeds/boerboel.jpg",
+    "imageAlt": "A fawn Boerboel standing on a rock",
+    "imagePosition": "center 30%"
+  },
+  {
+    "slug": "cane-corso",
+    "name": "Cane Corso",
+    "blurb": "An Italian guardian: athletic, intelligent and naturally protective.",
+    "image": "/assets/img/breeds/cane-corso.jpg",
+    "imageAlt": "A black Cane Corso standing outdoors",
+    "imagePosition": "center"
+  },
+  {
+    "slug": "presa-canario",
+    "name": "Presa Canario",
+    "blurb": "A Canary Islands guardian: powerful, calm and confident, with a strong protective instinct.",
+    "image": "/assets/img/breeds/presa-canario.jpg",
+    "imageAlt": "A brindle Presa Canario standing on a grassy hill",
+    "imagePosition": "center 30%"
+  }
+]

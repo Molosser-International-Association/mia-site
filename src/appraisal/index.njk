@@ -1,0 +1,13 @@
+---
+layout: layouts/page.njk
+title: Registration by appraisal
+description: Dogs without papers can join the MIA registry through an appraisal against the MIA breed standard.
+lead: No papers? Your dog can still join the MIA registry. An MIA appraiser evaluates the dog against the MIA breed standard.
+---
+<h2>Upcoming appraisal events</h2>
+<ul>
+  {%- for e in events %}
+  <li>{{ e.date }} · {{ e.state }} · {{ e.venue }}</li>
+  {%- endfor %}
+</ul>
+<p class="standard-note">Example dates. The full page is ported from the prototype in step 3.</p>

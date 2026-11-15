@@ -1,0 +1,7 @@
+[
+  { "date": "2027-03-20", "state": "Maryland", "venue": "[Venue, City, MD]", "spots": "[N]", "signupUrl": "" },
+  { "date": "2027-04-17", "state": "North Carolina", "venue": "[Venue, City, NC]", "spots": "[N]", "signupUrl": "" },
+  { "date": "2027-05-15", "state": "Pennsylvania", "venue": "[Venue, City, PA]", "spots": "[N]", "signupUrl": "" },
+  { "date": "2027-06-12", "state": "Georgia", "venue": "[Venue, City, GA]", "spots": "[N]", "signupUrl": "" },
+  { "date": "2027-09-18", "state": "Virginia", "venue": "[Venue, City, VA]", "spots": "[N]", "signupUrl": "" }
+]

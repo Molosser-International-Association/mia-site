@@ -1,0 +1,16 @@
+---
+layout: layouts/page.njk
+title: Breeds
+description: The breeds registered by the Molosser International Association and their MIA breed standards.
+lead: MIA breed standards are drafts until the family finalizes them.
+---
+<div class="card-grid">
+  {%- for b in breeds %}
+  <a class="breed-card" href="/breeds/{{ b.slug }}/">
+    <img src="{{ b.image }}" alt="{{ b.imageAlt }}" style="object-position: {{ b.imagePosition }}" loading="lazy">
+    <h3>{{ b.name }}</h3>
+    <p>{{ b.blurb }}</p>
+    <span>Read the standard &rarr;</span>
+  </a>
+  {%- endfor %}
+</div>

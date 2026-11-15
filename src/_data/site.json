@@ -1,0 +1,49 @@
+{
+  "name": "Molosser International Association",
+  "shortName": "MIA",
+  "established": 2020,
+  "country": "United States",
+  "url": "https://molosserinternational.org",
+  "description": "A registry for the molosser breeds: DNA-verified pedigrees, health-tested breeding stock and a public registry.",
+  "noindex": true,
+
+  "email": {
+    "info": "info@molosserinternational.org",
+    "registry": "registry@molosserinternational.org",
+    "ethics": "ethics@molosserinternational.org"
+  },
+  "phone": "[PHONE]",
+  "hours": "[Hours, e.g. Mon–Fri, 9am–5pm ET]",
+  "social": [],
+
+  "portal": {
+    "live": false,
+    "url": "https://registry.molosserinternational.org",
+    "comingSoon": "The registry portal opens soon."
+  },
+
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "Registration", "url": "/registration/" },
+    { "label": "Breeds", "url": "/breeds/" },
+    { "label": "Appraisal", "url": "/appraisal/" },
+    { "label": "About", "url": "/about/" },
+    { "label": "Contact", "url": "/contact/" }
+  ],
+
+  "fees": {
+    "litter": "[FEE]",
+    "individual": "[FEE]",
+    "transfer": "[FEE]",
+    "appraisal": "[FEE]",
+    "pedigree": "[FEE]",
+    "ownershipTransfer": "[FEE]"
+  },
+
+  "rules": {
+    "passScore": "[PASS SCORE]",
+    "gradedGenerations": "[N]",
+    "foundationWindowCloses": "[DATE]",
+    "minAppraisalAge": "[MIN AGE]"
+  }
+}

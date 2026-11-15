@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+---
+{%- set b = breeds | breed(slug) %}
+<section class="page-hero">
+  <div class="container breed-hero">
+    <div>
+      <p class="eyebrow">MIA breed standard · draft</p>
+      <h1>{{ b.name }}</h1>
+      <p class="lead">{{ intro }}</p>
+      <p><strong>Size:</strong> {{ size }}</p>
+    </div>
+    <img src="{{ b.image }}" alt="{{ b.imageAlt }}" style="object-position: {{ b.imagePosition }}">
+  </div>
+</section>
+<div class="container page-body standard">
+  <p class="standard-note">Sections follow the order of the appraisal scoresheet, so every appraisal score maps to one part of this standard. <a href="/appraisal/">How appraisal works</a></p>
+  {{ content | safe }}
+</div>
