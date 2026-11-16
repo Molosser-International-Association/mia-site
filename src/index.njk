@@ -1,30 +1,103 @@
 ---
 layout: layouts/base.njk
 title: Home
-description: A registry built for the molosser breeds. DNA-verified pedigrees, health-tested breeding stock and a public registry.
+description: A registry built for the molosser breeds. DNA-verified pedigrees, health-tested breeding stock and a public registry for the Boerboel, Cane Corso and Presa Canario.
 ---
-<section class="page-hero">
-  <div class="container">
-    <h1>A registry built for the molosser breeds</h1>
-    <p class="lead">DNA-verified pedigrees, health-tested breeding stock and a public registry for the Boerboel, Cane Corso and Presa Canario.</p>
-    <p><a class="button" href="/registration/">Start a registration</a></p>
-    <p class="eyebrow">Est. {{ site.established }}</p>
+{%- set hero = breeds | breed("boerboel") %}
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>A registry built for the molosser breeds</h1>
+      <p class="lead">DNA-verified pedigrees, health-tested breeding stock and a public registry for the Boerboel, Cane Corso and Presa Canario.</p>
+      <div class="button-row">
+        <a class="button" href="/registration/">Start a registration</a>
+        {%- set label = "Search the registry" %}{% set style = "outline" %}
+        {% include "partials/portal-button.njk" %}
+      </div>
+      <p class="eyebrow">Est. {{ site.established }}</p>
+    </div>
+    <img class="hero-image" src="{{ hero.image }}" alt="{{ hero.imageAlt }}" style="object-position: {{ hero.imagePosition }}" width="560" height="480">
   </div>
 </section>
 
-<div class="container page-body">
-  <h2>Breeds we register</h2>
-  <div class="card-grid">
-    {%- for b in breeds %}
-    <a class="breed-card" href="/breeds/{{ b.slug }}/">
-      <img src="{{ b.image }}" alt="{{ b.imageAlt }}" style="object-position: {{ b.imagePosition }}" loading="lazy">
-      <h3>{{ b.name }}</h3>
-      <p>{{ b.blurb }}</p>
-      <span>Breed standard &rarr;</span>
-    </a>
-    {%- endfor %}
+<section class="section">
+  <div class="container">
+    <h2 class="rule-heading">Breeds we register</h2>
+    <div class="card-grid">
+      {%- for b in breeds %}
+      <a class="breed-card" href="/breeds/{{ b.slug }}/">
+        <img src="{{ b.image }}" alt="{{ b.imageAlt }}" style="object-position: {{ b.imagePosition }}" loading="lazy" width="400" height="400">
+        <h3>{{ b.name }}</h3>
+        <p>{{ b.blurb }}</p>
+        <span>Breed standard &rarr;</span>
+      </a>
+      {%- endfor %}
+    </div>
+    <p class="more-breeds"><strong>More molosser breeds coming.</strong> MIA plans to open registration to more mastiff-type breeds.</p>
   </div>
-  <p><strong>More molosser breeds coming.</strong> MIA plans to open registration to more mastiff-type breeds.</p>
+</section>
 
-  <p class="standard-note">Scaffold only: the rest of the home page is ported from the prototype in step 3.</p>
-</div>
+<section class="section section--stone">
+  <div class="container split">
+    <h2>What MIA does</h2>
+    <div class="feature-grid">
+      <div class="feature"><h3>Litter registration</h3><p>Register a litter from MIA-registered parents and receive a registration slip for every pup.</p></div>
+      <div class="feature"><h3>Individual registration</h3><p>Register a dog from an MIA litter, transfer one from another registry, or register a dog without papers through appraisal.</p></div>
+      <div class="feature"><h3>Certified pedigrees</h3><p>Order a certified, DNA-backed multi-generation pedigree for any registered dog.</p></div>
+      <div class="feature"><h3>Ownership transfers</h3><p>Move a registered dog to its new owner and keep the public record current.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Why MIA</h2>
+    <div class="why-grid">
+      <div class="card">
+        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 4 C10 14 26 22 26 32 M26 4 C26 14 10 22 10 32 M12 10 H24 M12 26 H24"/></svg>
+        <h3>DNA on every dog</h3>
+        <p>Every registered dog has a DNA profile on file, so parentage can be verified.</p>
+      </div>
+      <div class="card">
+        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 32 C8 25 4 19 4 13 C4 8 8 4 12.5 4 C15 4 17 5.5 18 7.5 C19 5.5 21 4 23.5 4 C28 4 32 8 32 13 C32 19 28 25 18 32 Z"/><path d="M10 17 H15 L17 13 L20 21 L22 17 H26"/></svg>
+        <h3>Health testing required</h3>
+        <p>Breeding stock must pass breed-appropriate health screening.</p>
+      </div>
+      <div class="card">
+        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 32 H32 M8 32 V12 M28 32 V12 M18 32 V4 M4 12 H32"/></svg>
+        <h3>A real standard</h3>
+        <p>Dogs are measured against MIA breed standards for type, structure and temperament.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="banner banner--center">
+    <h2>Verify a registration</h2>
+    <p>Buying a molosser? Look up any MIA-registered dog to confirm its registration, parentage and status.</p>
+    {%- set label = "Search the registry" %}{% set style = "" %}
+    {% include "partials/portal-button.njk" %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>How registration works</h2>
+    <ol class="steps">
+      <li><span class="step-num">01</span><h3>Create an account</h3><p>Sign up in the MIA registry portal.</p></li>
+      <li><span class="step-num">02</span><h3>Submit the application</h3><p>Add photos, DNA, health results and the fee.</p></li>
+      <li><span class="step-num">03</span><h3>Review and certificate</h3><p>MIA reviews it, assigns a registration number and issues the certificate.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--stone">
+  <div class="container split">
+    <h2>Founded by breeders</h2>
+    <div>
+      <p class="lead-dark">MIA was founded by breeders, for breeders. We believe a registration should mean something: verified parentage, documented health, and dogs that meet a real standard.</p>
+      <a class="button button--outline button--oxblood" href="/about/">About MIA</a>
+    </div>
+  </div>
+</section>

@@ -2,7 +2,34 @@
 layout: layouts/page.njk
 title: Contact
 description: Contact the Molosser International Association about registration, appraisals or a registered dog.
-lead: Questions about registration, appraisals or a registered dog? Send us a message.
+lead: Questions about registration, appraisals or a registered dog? Send us a message and we'll reply within [N] business days.
 ---
-<p>Email: <a href="mailto:{{ site.email.info }}">{{ site.email.info }}</a></p>
-<p class="standard-note">The contact form is added in step 4.</p>
+<div class="contact">
+  {#- The form posts nowhere yet. Step 4 adds a Worker endpoint with Turnstile spam protection. #}
+  <form class="card form" action="#" method="post">
+    <div class="form-row">
+      <label>Name<input name="name" type="text" autocomplete="name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+    </div>
+    <label>Topic
+      <select name="topic">
+        <option>Registration</option>
+        <option>Appraisal events</option>
+        <option>Verifying a dog</option>
+        <option>Ethics concern</option>
+        <option>Other</option>
+      </select>
+    </label>
+    <label>Registration number <span class="muted">(optional)</span><input name="registration" type="text" placeholder="MIA-BB-00000"></label>
+    <label>Message<textarea name="message" rows="6" required></textarea></label>
+    <button class="button" type="submit" disabled>Send message</button>
+    <p class="muted small">The form goes live soon. Until then, email <a href="mailto:{{ site.email.info }}">{{ site.email.info }}</a>.</p>
+  </form>
+
+  <aside class="contact-aside">
+    <img class="seal" src="/assets/img/mia-seal-dark.png" alt="Molosser International Association seal, established 2020" width="220" height="220">
+    <div><span class="label">Email</span><a href="mailto:{{ site.email.info }}">{{ site.email.info }}</a></div>
+    <div><span class="label">Phone</span><span>{{ site.phone }}</span><span class="muted small">{{ site.hours }}</span></div>
+    <p class="note">Reporting an ethics concern? Email <a href="mailto:{{ site.email.ethics }}">{{ site.email.ethics }}</a>, and see how complaints are handled in the <a href="/code-of-ethics/">Code of Ethics</a>.</p>
+  </aside>
+</div>

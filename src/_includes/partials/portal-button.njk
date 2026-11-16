@@ -1,0 +1,7 @@
+{#- Link to the registry portal, or a "coming soon" label until it is live.
+    Set `label` and optionally `style` ("outline") before including. -#}
+{%- if site.portal.live %}
+<a class="button{% if style == 'outline' %} button--outline{% endif %}" href="{{ site.portal.url }}">{{ label }}</a>
+{%- else %}
+<span class="button button--disabled{% if style == 'outline' %} button--outline{% endif %}" aria-disabled="true">{{ label }} <small>· opens soon</small></span>
+{%- endif %}

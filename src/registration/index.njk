@@ -4,4 +4,66 @@ title: Registration
 description: Register a litter, a dog from another registry, or a dog without papers with the Molosser International Association.
 lead: Register a litter, a dog from another registry, or a dog without papers. Applications are filed and tracked in the MIA registry portal.
 ---
-<p class="standard-note">Content ported from the prototype in step 3: services and fees, what you'll need, registration status, breeds and colors, transfers.</p>
+<section class="block">
+  <h2>Services and fees</h2>
+  <p class="muted">One-time fees per registration or service. No membership required.</p>
+  <div class="service-grid">
+    <article class="card"><h3>Litter registration</h3><p class="fee">{{ site.fees.litter }}</p><p>Both parents must be MIA-registered. Includes a registration slip for every pup.</p></article>
+    <article class="card"><h3>Individual registration</h3><p class="fee">{{ site.fees.individual }}</p><p>For a pup from an MIA litter, using the slip from the breeder.</p></article>
+    <article class="card"><h3>Transfer from another registry</h3><p class="fee">{{ site.fees.transfer }}</p><p>For dogs already registered with an accepted registry.</p></article>
+    <article class="card"><h3>Registration by appraisal</h3><p class="fee">{{ site.fees.appraisal }}</p><p>For dogs without papers. Registered as Foundation if they pass. <a href="/appraisal/">How it works</a></p></article>
+    <article class="card"><h3>Certified pedigree</h3><p class="fee">{{ site.fees.pedigree }}</p><p>A certified, DNA-backed multi-generation pedigree for any MIA dog.</p></article>
+    <article class="card"><h3>Ownership transfer</h3><p class="fee">{{ site.fees.ownershipTransfer }}</p><p>Move a registered dog to its new owner.</p></article>
+  </div>
+</section>
+
+<section class="block two-col">
+  <div>
+    <h2>What you'll need</h2>
+    <ul class="checklist">
+      <li>Registration numbers for the sire and dam (litters)</li>
+      <li>Clear photos: head, front, side and rear</li>
+      <li>Microchip number</li>
+      <li>DNA profile from an accepted lab</li>
+      <li>Health test results for the breed</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Health tests</h3>
+    <dl class="pairs">
+      <div><dt>Boerboel, Cane Corso and Presa Canario</dt><dd>[Hips and elbows, other required tests]</dd></div>
+      <div><dt>Accepted DNA labs</dt><dd>[List of labs]</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Registration status</h2>
+  <p class="muted">Every MIA dog carries one of three statuses, shown on its certificate and public record.</p>
+  <div class="status-grid">
+    <div class="status status--pedigreed"><span>Pedigreed</span><p>Fully documented, DNA-verified parentage.</p></div>
+    <div class="status status--graded"><span>Graded</span><p>A descendant of Foundation stock. Moves up one step each generation and becomes Pedigreed after {{ site.rules.gradedGenerations }} generations.</p></div>
+    <div class="status status--foundation"><span>Foundation</span><p>A dog without papers, registered by passing an MIA appraisal. <a href="/appraisal/">How appraisal works</a></p></div>
+  </div>
+</section>
+
+<section class="block two-col">
+  <div>
+    <h2>Breeds and colors</h2>
+    <p>MIA registers the full range of colors in each breed, including black and fawn in the Boerboel, [colors] in the Cane Corso, and fawn, brindle and black in the Presa Canario. Color is recorded on every registration. [Color breeding rules]</p>
+    <p><a href="/breeds/">Read the breed standards &rarr;</a></p>
+  </div>
+  <div>
+    <h2>Transfers from other registries</h2>
+    <p>Dogs registered with [accepted registries] can transfer to MIA with their certificate, a three-generation pedigree and a DNA profile.</p>
+  </div>
+</section>
+
+<div class="banner">
+  <div>
+    <h2>Ready to register?</h2>
+    <p>Every registration is subject to the <a href="/code-of-ethics/">MIA Code of Ethics</a>.</p>
+  </div>
+  {%- set label = "Open the registry portal" %}{% set style = "" %}
+  {% include "partials/portal-button.njk" %}
+</div>
