@@ -46,5 +46,11 @@ npm run build    # writes the site to _site/
 
 ## Deploys
 
-Deployment to Cloudflare through GitHub Actions is set up in step 5 of the build checklist.
-Changes go through pull requests into `main`.
+The site runs as a Cloudflare Worker serving static assets (`wrangler.jsonc`).
+
+- **Pull requests:** GitHub Actions runs the `build` job as a required check.
+- **Merge to `main`:** the `deploy` job builds and runs `wrangler deploy`, in the
+  `production` GitHub environment.
+- **Secrets** (in the `production` environment, never in the repo):
+  `CLOUDFLARE_API_TOKEN` (Workers Scripts: Edit, this account only) and `CLOUDFLARE_ACCOUNT_ID`.
+- **Manual deploy** from your machine, if ever needed: `npx wrangler login`, then `npm run deploy`.
