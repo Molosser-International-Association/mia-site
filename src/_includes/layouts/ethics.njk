@@ -1,0 +1,18 @@
+---
+layout: layouts/page.njk
+---
+{#- Contents list built from the ## headings listed in front matter `sections`. -#}
+<div class="with-toc">
+  <nav class="toc" aria-label="Contents">
+    <p class="label">Contents</p>
+    <ol>
+      {%- for s in sections %}
+      <li><a href="#{{ s | slugify }}">{{ s }}</a></li>
+      {%- endfor %}
+    </ol>
+  </nav>
+  <div class="prose">
+    {{ content | safe }}
+    <p class="muted"><em>Effective {{ effective }}.</em></p>
+  </div>
+</div>

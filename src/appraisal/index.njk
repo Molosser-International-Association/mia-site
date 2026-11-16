@@ -2,12 +2,77 @@
 layout: layouts/page.njk
 title: Registration by appraisal
 description: Dogs without papers can join the MIA registry through an appraisal against the MIA breed standard.
-lead: No papers? Your dog can still join the MIA registry. An MIA appraiser evaluates the dog against the MIA breed standard.
+lead: No papers? Your dog can still join the MIA registry. An MIA appraiser evaluates the dog against the MIA breed standard, and dogs that pass with a DNA profile on file are registered as Foundation dogs.
 ---
-<h2>Upcoming appraisal events</h2>
-<ul>
-  {%- for e in events %}
-  <li>{{ e.date }} · {{ e.state }} · {{ e.venue }}</li>
-  {%- endfor %}
-</ul>
-<p class="standard-note">Example dates. The full page is ported from the prototype in step 3.</p>
+<p class="detail-line">Open to Boerboels, Cane Corsos and Presa Canarios at least {{ site.rules.minAppraisalAge }} old · Pass score {{ site.rules.passScore }}% · Foundation window closes {{ site.rules.foundationWindowCloses }}</p>
+
+<section class="block">
+  <div class="heading-row">
+    <h2>Upcoming appraisal events</h2>
+    <span class="muted">Example dates · {{ site.fees.appraisal }} per dog</span>
+  </div>
+  <ul class="events">
+    {%- for e in events %}
+    <li class="event">
+      <div class="event-date"><span>{{ e.date | monthShort }}</span><strong>{{ e.date | dayNum }}</strong></div>
+      <div class="event-info">
+        <h3>{{ e.state }} appraisal day</h3>
+        <p>{{ e.date | longDate }} · {{ e.venue }}</p>
+      </div>
+      <span class="muted">{{ e.spots }} spots</span>
+      {%- if e.signupUrl %}
+      <a class="button" href="{{ e.signupUrl }}">Sign up</a>
+      {%- else %}
+      <span class="button button--disabled" aria-disabled="true">Sign-up opens soon</span>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="block two-col">
+  <div>
+    <h2>How appraisal day works</h2>
+    <p class="muted">Each appraisal takes about [45] minutes per dog.</p>
+    <ol class="numbered">
+      <li><strong>Check-in.</strong> We scan the microchip and check your paperwork.</li>
+      <li><strong>Measurements.</strong> Height at the withers, weight and [other measurements].</li>
+      <li><strong>Standing evaluation.</strong> Head, bite, body and structure. Your dog must accept handling.</li>
+      <li><strong>Movement.</strong> You walk and trot your dog so the appraiser can assess gait.</li>
+      <li><strong>Temperament.</strong> How the dog responds to people, handling and its surroundings.</li>
+      <li><strong>Scoring.</strong> Scored on the eight sections of the <a href="/breeds/">breed standard</a>.</li>
+    </ol>
+  </div>
+  <div>
+    <div class="card">
+      <h3>What to bring</h3>
+      <ul>
+        <li>Your booking confirmation</li>
+        <li>Secure leash and flat collar; no prong or electronic collars</li>
+        <li>Proof of current rabies vaccination</li>
+        <li>DNA profile number, or a sample kit [MIA policy]</li>
+        <li>Health test results, if you have them</li>
+        <li>Water and a crate or shade for waiting</li>
+      </ul>
+    </div>
+    <p class="note"><strong>Before the day:</strong> practice standing your dog still, letting a stranger handle the mouth and body, and trotting on a loose leash. Females in season [may / may not] attend.</p>
+  </div>
+</section>
+
+<section class="block two-col">
+  <div>
+    <h2>After the appraisal</h2>
+    <dl class="pairs">
+      <div><dt>Results</dt><dd>Full scoresheet, measurements and notes in the registry portal within [N] days.</dd></div>
+      <div><dt>Passing dogs</dt><dd>Registered as Foundation once the DNA profile is on file, and the certificate is issued.</dd></div>
+      <div><dt>Public record</dt><dd>Shows Foundation status and appraisal date, not scores.</dd></div>
+      <div><dt>Below the pass score</dt><dd>One re-appraisal allowed, no sooner than [6 months] later.</dd></div>
+      <div><dt>Questions or disputes</dt><dd>Contact <a href="mailto:{{ site.email.registry }}">{{ site.email.registry }}</a> within [30] days. Conduct concerns fall under the <a href="/code-of-ethics/">Code of Ethics</a>.</dd></div>
+    </dl>
+  </div>
+  <div>
+    <h2>Can't make an event?</h2>
+    <div class="card"><h3>Video appraisal</h3><p>A live video call with an MIA appraiser. You'll need a helper, a measuring stick and space to trot your dog. Fee: [FEE].</p></div>
+    <div class="card"><h3>Request an event</h3><p>Have [5] or more dogs to appraise in your area? <a href="/contact/">Contact us</a> about hosting an appraisal day.</p></div>
+  </div>
+</section>
